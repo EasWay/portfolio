@@ -1,0 +1,3 @@
+module.exports=[27572,a=>{"use strict";var b=a.i(7997);a.s(["default",0,function({children:a}){return(0,b.jsxs)("html",{lang:"en",children:[(0,b.jsxs)("head",{children:[(0,b.jsx)("link",{rel:"icon",href:"/favicon.ico"}),(0,b.jsx)("meta",{name:"theme-color",content:"#0a0a0a"}),(0,b.jsx)("meta",{name:"viewport",content:"width=device-width, initial-scale=1"})]}),(0,b.jsx)("body",{className:"antialiased",children:a})]})},"metadata",0,{title:"Godfred Fokuo | Software Developer",description:"Software developer from Ghana. React Native, Kotlin, Next.js. Built 5+ mobile apps and 2+ web apps.",manifest:"/manifest.json"}])},50645,a=>{a.n(a.i(27572))}];
+
+//# sourceMappingURL=src_app_layout_tsx_0fhx__n._.js.map

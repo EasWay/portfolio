@@ -1,41 +1,24 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Head from "next/head";
 
 export default function Home() {
-  const [typedText, setTypedText] = useState("");
-  const fullText = "React Native Developer | Kotlin & Android | Full-Stack Web";
-  
-  useEffect(() => {
-    let index = 0;
-    const timer = setInterval(() => {
-      if (index <= fullText.length) {
-        setTypedText(fullText.slice(0, index));
-        index++;
-      } else {
-        clearInterval(timer);
-      }
-    }, 50);
-    return () => clearInterval(timer);
-  }, []);
-
   const projects = [
     {
       name: "OneTap",
-      description: "Smart productivity app built with Kotlin. 50+ active users. Features task management, reminders, and smart scheduling.",
+      description: "Smart productivity app built with Kotlin. 50+ active users with task management and smart scheduling.",
       tech: ["Kotlin", "Android", "MVVM"],
       link: "https://github.com/EasWay/OneTap"
     },
     {
       name: "M-Kopa CRM",
-      description: "Customer relationship management system for M-Kopa sales team. Real-time follow-ups and lead tracking.",
+      description: "Customer relationship management system for M-Kopa sales team with real-time follow-ups.",
       tech: ["Next.js", "Redis", "Vercel"],
       link: "https://mkopa-crm.vercel.app"
     },
     {
       name: "Humanize AI",
-      description: "AI-powered text humanizer using Llama 3.3 70B. Converts robotic text to natural, human-sounding content.",
+      description: "AI-powered text humanizer using Llama 3.3 70B for natural-sounding content.",
       tech: ["Next.js", "NVIDIA NIM", "Render"],
       link: "https://humanize-ai-jqbi.onrender.com"
     },
@@ -60,9 +43,9 @@ export default function Home() {
   ];
 
   const skills = [
-    "React Native", "Kotlin", "Android Development", "Next.js", "React",
-    "TypeScript", "Node.js", "Supabase", "PostgreSQL", "Tailwind CSS",
-    "Git", "REST APIs", "Mobile Development", "Web Development"
+    "React Native", "Kotlin", "Android", "Next.js", "React",
+    "TypeScript", "Node.js", "Supabase", "PostgreSQL", "Tailwind",
+    "Git", "REST APIs", "Mobile Dev", "Web Dev"
   ];
 
   const experience = [
@@ -70,22 +53,19 @@ export default function Home() {
       role: "Sales Representative",
       company: "M-Kopa",
       period: "Nov 2022 - Present",
-      location: "Accra, Ghana",
-      description: "Working at M-Kopa DSR inside MTN office, Mallam Junction. Combining sales with software development."
+      description: "DSR at MTN office, Mallam Junction. Combining sales with software development."
     },
     {
-      role: "Diploma in Information Technology",
+      role: "Diploma in IT",
       company: "GCTU",
       period: "2023 - 2025",
-      location: "Ghana",
-      description: "Pursuing IT diploma at Ghana Communication Technology University."
+      description: "Information Technology diploma at Ghana Communication Technology University."
     },
     {
-      role: "Software Developer (Self-taught)",
+      role: "Software Developer",
       company: "Freelance",
       period: "2020 - Present",
-      location: "Accra, Ghana",
-      description: "Built 5+ mobile apps and 2+ web apps. Projects include OneTap, M-Kopa CRM, Humanize AI."
+      description: "Built 5+ mobile apps and 2+ web apps. OneTap has 50+ active users."
     }
   ];
 
@@ -93,156 +73,103 @@ export default function Home() {
     <>
       <Head>
         <title>Godfred Fokuo | Software Developer</title>
-        <meta name="description" content="Software developer from Ghana specializing in React Native, Kotlin, and web technologies. Built 5+ mobile apps and 2+ web apps." />
+        <meta name="description" content="Software developer from Ghana. React Native, Kotlin, and web technologies. Built 5+ mobile apps and 2+ web apps." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="manifest" href="/manifest.json" />
       </Head>
-      
-      <div className="matrix-bg" />
-      
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0f]/80 backdrop-blur-md border-b border-white/5">
-        <nav className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <a href="#" className="font-mono text-xl font-bold text-[#00ff88]">
-            &lt;Godfred /&gt;
+
+      {/* Navigation */}
+      <nav className="nav">
+        <div className="nav-inner">
+          <span className="font-mono text-lg font-bold" style={{ color: '#22c55e' }}>
+            godfred.dev
+          </span>
+          <div className="nav-links">
+            <a href="#about" className="link">About</a>
+            <a href="#projects" className="link">Projects</a>
+            <a href="#skills" className="link">Skills</a>
+            <a href="#experience" className="link">Experience</a>
+            <a href="#contact" className="link">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="hero">
+        <p className="font-mono text-sm animate-fade" style={{ color: '#22c55e', marginBottom: '1rem' }}>
+          Hello, I'm
+        </p>
+        <h1 className="animate-fade delay-1" style={{ fontSize: 'clamp(2.5rem, 8vw, 4.5rem)', fontWeight: 700, marginBottom: '1rem' }}>
+          Godfred Fokuo
+        </h1>
+        <p className="animate-fade delay-2" style={{ fontSize: '1.25rem', color: '#a1a1aa', maxWidth: '500px', marginBottom: '2rem' }}>
+          Software developer specializing in mobile apps & web platforms.
+          <br />
+          <span style={{ color: '#71717a' }}>React Native • Kotlin • Next.js</span>
+        </p>
+        <div className="animate-fade delay-3" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <a href="#projects" className="btn btn-primary">
+            View Work
           </a>
-          <div className="flex gap-6 text-sm">
-            <a href="#about" className="link-hover">About</a>
-            <a href="#skills" className="link-hover">Skills</a>
-            <a href="#projects" className="link-hover">Projects</a>
-            <a href="#experience" className="link-hover">Experience</a>
-            <a href="#contact" className="link-hover">Contact</a>
-          </div>
-        </nav>
-      </header>
-
-      {/* Hero Section */}
-      <section className="section min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="mb-4 font-mono text-[#00ff88] text-sm animate-pulse">
-            Hello, World!
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">
-            <span className="gradient-text">Godfred Fokuo</span>
-          </h1>
-          <div className="font-mono text-xl md:text-2xl text-[#a1a1aa] mb-8 h-8">
-            {typedText}
-            <span className="animate-pulse">|</span>
-          </div>
-          <p className="text-[#71717a] max-w-xl mx-auto mb-8 text-lg">
-            Software developer from Ghana building powerful mobile apps and elegant web solutions. 
-            5+ mobile apps. 2+ web apps. 50+ users on production.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <a href="#projects" className="btn-primary">
-              View Projects
-            </a>
-            <a href="#contact" className="btn-secondary">
-              Get In Touch
-            </a>
-          </div>
-          
-          {/* Scroll indicator */}
-          <div className="mt-16 animate-float">
-            <svg className="w-6 h-6 mx-auto text-[#00ff88]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </div>
+          <a href="#contact" className="btn btn-outline">
+            Get In Touch
+          </a>
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About */}
       <section id="about" className="section">
-        <h2 className="text-3xl font-bold mb-12 flex items-center gap-3">
-          <span className="text-[#00ff88]">//</span>
-          About Me
-        </h2>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-lg text-[#a1a1aa] leading-relaxed mb-6">
-              I'm a software developer based in Accra, Ghana with a passion for building 
-              impactful digital products. From mobile apps that help people be more productive 
-              to web platforms that solve real business problems.
-            </p>
-            <p className="text-lg text-[#a1a1aa] leading-relaxed mb-6">
-              Currently working at M-Kopa while completing my IT diploma at GCTU. 
-              I balance my sales role with building apps - because why choose between 
-              tech and business when I can do both?
-            </p>
-            <div className="flex gap-4 text-sm text-[#71717a]">
-              <div className="flex items-center gap-2">
-                <span className="text-[#00ff88]">&#9679;</span>
-                Accra, Ghana
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-[#00ff88]">&#9679;</span>
-                Open to opportunities
-              </div>
+        <h2 style={{ fontSize: '2rem', marginBottom: '3rem' }}>About</h2>
+        <div style={{ display: 'grid', gap: '2rem', maxWidth: '800px' }}>
+          <p style={{ color: '#a1a1aa', fontSize: '1.125rem', lineHeight: 1.8 }}>
+            I'm a software developer based in Accra, Ghana with a passion for building 
+            impactful digital products. From mobile apps that help people be more productive 
+            to web platforms that solve real business problems.
+          </p>
+          <p style={{ color: '#a1a1aa', fontSize: '1.125rem', lineHeight: 1.8 }}>
+            Currently working at M-Kopa while completing my IT diploma at GCTU. 
+            I've built 5+ mobile apps and 2+ production web apps, including OneTap 
+            which serves 50+ active users.
+          </p>
+          <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', marginTop: '1rem' }}>
+            <div>
+              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#22c55e' }}>5+</div>
+              <div style={{ color: '#71717a', fontSize: '0.875rem' }}>Mobile Apps</div>
             </div>
-          </div>
-          <div className="card glow-primary">
-            <h3 className="font-mono text-[#00ff88] mb-4">Quick Stats</h3>
-            <div className="grid grid-cols-2 gap-6">
-              <div>
-                <div className="text-3xl font-bold gradient-text">5+</div>
-                <div className="text-sm text-[#71717a]">Mobile Apps</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold gradient-text">2+</div>
-                <div className="text-sm text-[#71717a]">Web Apps</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold gradient-text">50+</div>
-                <div className="text-sm text-[#71717a]">Users (OneTap)</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold gradient-text">3+</div>
-                <div className="text-sm text-[#71717a]">Years Coding</div>
-              </div>
+            <div>
+              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#22c55e' }}>2+</div>
+              <div style={{ color: '#71717a', fontSize: '0.875rem' }}>Web Apps</div>
+            </div>
+            <div>
+              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#22c55e' }}>50+</div>
+              <div style={{ color: '#71717a', fontSize: '0.875rem' }}>Active Users</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="section">
-        <h2 className="text-3xl font-bold mb-12 flex items-center gap-3">
-          <span className="text-[#00ff88]">//</span>
-          Tech Stack
-        </h2>
-        <div className="flex flex-wrap gap-3">
-          {skills.map((skill) => (
-            <span key={skill} className="skill-badge">
-              {skill}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      {/* Projects Section */}
+      {/* Projects */}
       <section id="projects" className="section">
-        <h2 className="text-3xl font-bold mb-12 flex items-center gap-3">
-          <span className="text-[#00ff88]">//</span>
-          Projects
-        </h2>
-        <div className="project-grid">
+        <h2 style={{ fontSize: '2rem', marginBottom: '3rem' }}>Projects</h2>
+        <div className="projects-grid">
           {projects.map((project) => (
-            <a 
-              key={project.name} 
+            <a
+              key={project.name}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="card group block"
+              className="card-clean"
+              style={{ textDecoration: 'none', display: 'block' }}
             >
-              <h3 className="text-xl font-bold mb-2 group-hover:text-[#00ff88] transition-colors">
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.75rem', color: '#fafafa' }}>
                 {project.name}
               </h3>
-              <p className="text-[#a1a1aa] text-sm mb-4">
+              <p style={{ color: '#a1a1aa', fontSize: '0.9rem', marginBottom: '1rem', lineHeight: 1.6 }}>
                 {project.description}
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                 {project.tech.map((t) => (
-                  <span key={t} className="text-xs text-[#71717a] bg-white/5 px-2 py-1 rounded">
+                  <span key={t} style={{ fontSize: '0.75rem', color: '#71717a', background: '#1f1f1f', padding: '0.25rem 0.5rem', borderRadius: '0.25rem' }}>
                     {t}
                   </span>
                 ))}
@@ -252,78 +179,57 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience Section */}
+      {/* Skills */}
+      <section id="skills" className="section">
+        <h2 style={{ fontSize: '2rem', marginBottom: '3rem' }}>Skills</h2>
+        <div className="skills-wrap">
+          {skills.map((skill) => (
+            <span key={skill} className="skill-tag">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      {/* Experience */}
       <section id="experience" className="section">
-        <h2 className="text-3xl font-bold mb-12 flex items-center gap-3">
-          <span className="text-[#00ff88]">//</span>
-          Experience
-        </h2>
-        <div className="max-w-2xl">
+        <h2 style={{ fontSize: '2rem', marginBottom: '3rem' }}>Experience</h2>
+        <div className="timeline" style={{ maxWidth: '600px' }}>
           {experience.map((exp, i) => (
             <div key={i} className="timeline-item">
-              <div className="text-sm text-[#00ff88] font-mono mb-1">
+              <p style={{ fontSize: '0.875rem', color: '#22c55e', marginBottom: '0.25rem' }}>
                 {exp.period}
-              </div>
-              <h3 className="text-xl font-bold mb-1">
-                {exp.role}
-              </h3>
-              <div className="text-[#a1a1aa] mb-2">
-                {exp.company} &bull; {exp.location}
-              </div>
-              <p className="text-[#71717a] text-sm">
-                {exp.description}
               </p>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.25rem' }}>{exp.role}</h3>
+              <p style={{ color: '#a1a1aa', marginBottom: '0.5rem' }}>{exp.company}</p>
+              <p style={{ color: '#71717a', fontSize: '0.9rem' }}>{exp.description}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact */}
       <section id="contact" className="section">
-        <h2 className="text-3xl font-bold mb-12 flex items-center gap-3">
-          <span className="text-[#00ff88]">//</span>
-          Get In Touch
-        </h2>
-        <div className="text-center">
-          <p className="text-[#a1a1aa] mb-8 text-lg">
-            I'm always open to discussing new projects, creative ideas, 
-            or opportunities to be part of something amazing.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap mb-12">
-            <a 
-              href="https://github.com/EasWay" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary"
-            >
-              GitHub
-            </a>
-            <a 
-              href="https://linkedin.com/in/resilience-fred" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary"
-            >
-              LinkedIn
-            </a>
-            <a 
-              href="mailto:fokuogodfred@gmail.com" 
-              className="btn-secondary"
-            >
-              Email
-            </a>
-          </div>
+        <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Get In Touch</h2>
+        <p style={{ color: '#a1a1aa', fontSize: '1.125rem', marginBottom: '2rem', maxWidth: '500px' }}>
+          I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing.
+        </p>
+        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <a href="https://github.com/EasWay" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/resilience-fred" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+            LinkedIn
+          </a>
+          <a href="mailto:fokuogodfred@gmail.com" className="btn btn-outline">
+            Email
+          </a>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 text-center text-[#71717a] text-sm border-t border-white/5">
-        <p className="mb-2">
-          Built with Next.js & Tailwind CSS
-        </p>
-        <p>
-          &copy; {new Date().getFullYear()} Godfred Fokuo. All rights reserved.
-        </p>
+      <footer style={{ padding: '2rem', textAlign: 'center', color: '#71717a', fontSize: '0.875rem', borderTop: '1px solid #2a2a2a' }}>
+        <p>© {new Date().getFullYear()} Godfred Fokuo. Built with Next.js.</p>
       </footer>
     </>
   );
