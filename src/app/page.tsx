@@ -96,6 +96,21 @@ export default function Home() {
 
       {/* Hero */}
       <section className="hero">
+        {/* Profile Photo */}
+        <div style={{ marginBottom: '2rem', animation: 'fadeIn 0.5s ease forwards' }}>
+          <img 
+            src="/profile.png" 
+            alt="Godfred Fokuo" 
+            style={{ 
+              width: '150px', 
+              height: '150px', 
+              borderRadius: '50%', 
+              objectFit: 'cover',
+              border: '3px solid #22c55e',
+              boxShadow: '0 0 30px rgba(34, 197, 94, 0.3)'
+            }} 
+          />
+        </div>
         <p className="font-mono text-sm animate-fade" style={{ color: '#22c55e', marginBottom: '1rem' }}>
           Hello, I'm
         </p>
