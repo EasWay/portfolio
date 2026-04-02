@@ -1,251 +1,250 @@
-"use client";
+import type { Metadata } from 'next'
+import './globals.css'
 
-import Head from "next/head";
+export const metadata: Metadata = {
+  title: 'Godfred Fokuo | Full-Stack Developer',
+  description: 'Full-stack developer specializing in React Native, Kotlin, Supabase, and modern web technologies. Building digital experiences that matter.',
+}
 
 export default function Home() {
   const projects = [
     {
-      name: "OneTap",
-      description: "Smart productivity app built with Kotlin. 50+ active users with task management and smart scheduling.",
-      tech: ["Kotlin", "Android", "MVVM"],
-      link: "https://github.com/EasWay/OneTap"
+      name: 'OneTap',
+      desc: 'Smart productivity app with 50+ active users. Task management and smart scheduling built with Kotlin.',
+      tech: ['Kotlin', 'Android', 'MVVM'],
+      link: 'https://github.com/EasWay/OneTap'
     },
     {
-      name: "M-Kopa CRM",
-      description: "Customer relationship management system for M-Kopa sales team with real-time follow-ups.",
-      tech: ["Next.js", "Redis", "Vercel"],
-      link: "https://mkopa-crm.vercel.app"
+      name: 'M-Kopa CRM',
+      desc: 'Customer relationship management system for M-Kopa sales team with real-time follow-ups.',
+      tech: ['Next.js', 'Redis', 'Vercel'],
+      link: 'https://mkopa-crm.vercel.app'
     },
     {
-      name: "Humanize AI",
-      description: "AI-powered text humanizer using Llama 3.3 70B for natural-sounding content.",
-      tech: ["Next.js", "NVIDIA NIM", "Render"],
-      link: "https://humanize-ai-jqbi.onrender.com"
+      name: 'Humanize AI',
+      desc: 'AI-powered text humanizer using Llama 3.3 70B for natural-sounding content. Free, no accounts.',
+      tech: ['Next.js', 'NVIDIA NIM', 'Render'],
+      link: 'https://humanize-ai-jqbi.onrender.com'
     },
     {
-      name: "Bliss-Braids",
-      description: "E-commerce website for hair salon with online booking and product catalog.",
-      tech: ["Next.js", "Supabase", "Vercel"],
-      link: "https://bliss-braids.vercel.app"
+      name: 'Bliss Braids',
+      desc: 'E-commerce website for hair salon with online booking and product catalog.',
+      tech: ['Next.js', 'Supabase', 'Vercel'],
+      link: '#'
     },
     {
-      name: "Educonnect",
-      description: "Educational platform connecting students and teachers with course management.",
-      tech: ["React", "Node.js", "MongoDB"],
-      link: "https://github.com/EasWay/educonnect"
+      name: 'EduConnect',
+      desc: 'Educational platform connecting students and teachers with course management.',
+      tech: ['React', 'Node.js', 'MongoDB'],
+      link: '#'
     },
     {
-      name: "AlphaPortfolio",
-      description: "Portfolio website for Alpha Group of Developers team.",
-      tech: ["Next.js", "Tailwind", "Vercel"],
-      link: "https://alpha-portfolio.vercel.app"
+      name: 'AlphaPortfolio',
+      desc: 'Portfolio website for Alpha Group of Developers team.',
+      tech: ['Next.js', 'Tailwind', 'Vercel'],
+      link: '#'
     }
-  ];
+  ]
 
   const skills = [
-    "React Native", "Kotlin", "Android", "Next.js", "React",
-    "TypeScript", "Node.js", "Supabase", "PostgreSQL", "Tailwind",
-    "Git", "REST APIs", "Mobile Dev", "Web Dev"
-  ];
+    'React Native', 'Kotlin', 'Android', 'Next.js', 'React',
+    'TypeScript', 'Node.js', 'Supabase', 'PostgreSQL', 'Tailwind',
+    'Git', 'REST APIs', 'Mobile Dev', 'Web Dev'
+  ]
 
   const experience = [
     {
-      role: "Sales Representative",
-      company: "M-Kopa",
-      period: "Nov 2022 - Present",
-      description: "DSR at MTN office, Mallam Junction. Combining sales with software development."
+      role: 'Sales Representative',
+      company: 'M-Kopa',
+      period: 'Nov 2022 - Present',
+      desc: 'DSR at MTN Mallam Junction, McCarthy Hill branch. Sales, customer acquisition, and CRM management.'
     },
     {
-      role: "Diploma in IT",
-      company: "GCTU",
-      period: "2023 - 2025",
-      description: "Information Technology diploma at Ghana Communication Technology University."
-    },
-    {
-      role: "Software Developer",
-      company: "Freelance",
-      period: "2020 - Present",
-      description: "Built 5+ mobile apps and 2+ web apps. OneTap has 50+ active users."
+      role: 'IT Officer (Pending)',
+      company: 'DSTRKT24',
+      period: 'Applied 2026',
+      desc: 'Application submitted for IT Officer position.'
     }
-  ];
+  ]
+
+  const stats = [
+    { value: '5+', label: 'Mobile Apps' },
+    { value: '2+', label: 'Web Apps' },
+    { value: '50+', label: 'Active Users' },
+    { value: '3+', label: 'Years' }
+  ]
 
   return (
-    <>
-      <Head>
-        <title>Godfred Fokuo | Software Developer</title>
-        <meta name="description" content="Software developer from Ghana. React Native, Kotlin, and web technologies. Built 5+ mobile apps and 2+ web apps." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="manifest" href="/manifest.json" />
-      </Head>
-
+    <main>
       {/* Navigation */}
-      <nav className="nav">
+      <nav>
         <div className="nav-inner">
-          <span className="font-mono text-lg font-bold" style={{ color: '#22c55e' }}>
-            godfred.dev
-          </span>
-          <div className="nav-links">
-            <a href="#about" className="link">About</a>
-            <a href="#projects" className="link">Projects</a>
-            <a href="#skills" className="link">Skills</a>
-            <a href="#experience" className="link">Experience</a>
-            <a href="#contact" className="link">Contact</a>
-          </div>
+          <a href="#" className="nav-brand">
+            <span>&lt;/&gt;</span> Godfred
+          </a>
+          <ul className="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
         </div>
       </nav>
 
       {/* Hero */}
       <section className="hero">
-        {/* Profile Photo */}
-        <div style={{ marginBottom: '2rem', animation: 'fadeIn 0.5s ease forwards' }}>
+        <div className="hero-content">
           <img 
             src="/profile.png" 
             alt="Godfred Fokuo" 
-            style={{ 
-              width: '150px', 
-              height: '150px', 
-              borderRadius: '50%', 
-              objectFit: 'cover',
-              border: '3px solid #22c55e',
-              boxShadow: '0 0 30px rgba(34, 197, 94, 0.3)'
-            }} 
+            className="profile-img"
           />
-        </div>
-        <p className="font-mono text-sm animate-fade" style={{ color: '#22c55e', marginBottom: '1rem' }}>
-          Hello, I'm
-        </p>
-        <h1 className="animate-fade delay-1" style={{ fontSize: 'clamp(2.5rem, 8vw, 4.5rem)', fontWeight: 700, marginBottom: '1rem' }}>
-          Godfred Fokuo
-        </h1>
-        <p className="animate-fade delay-2" style={{ fontSize: '1.25rem', color: '#a1a1aa', maxWidth: '500px', marginBottom: '2rem' }}>
-          Software developer specializing in mobile apps & web platforms.
-          <br />
-          <span style={{ color: '#71717a' }}>React Native • Kotlin • Next.js</span>
-        </p>
-        <div className="animate-fade delay-3" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-          <a href="#projects" className="btn btn-primary">
-            View Work
-          </a>
-          <a href="#contact" className="btn btn-outline">
-            Get In Touch
-          </a>
+          <p className="hero-label font-mono animate-in">Full-Stack Developer</p>
+          <h1 className="animate-in delay-1">Building digital<br/>experiences that matter</h1>
+          <p className="hero-subtitle animate-in delay-2">
+            I build mobile apps, web platforms, and smart systems. React Native, Kotlin, Supabase, and beyond.
+          </p>
+          <div className="hero-cta animate-in delay-3">
+            <a href="#projects" className="btn btn-primary">View Projects</a>
+            <a href="#contact" className="btn btn-secondary">Get In Touch</a>
+          </div>
+          <div className="stats animate-in delay-4">
+            {stats.map((stat, i) => (
+              <div key={i} className="stat-item">
+                <div className="stat-value">{stat.value}</div>
+                <div className="stat-label">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* About */}
-      <section id="about" className="section">
-        <h2 style={{ fontSize: '2rem', marginBottom: '3rem' }}>About</h2>
-        <div style={{ display: 'grid', gap: '2rem', maxWidth: '800px' }}>
-          <p style={{ color: '#a1a1aa', fontSize: '1.125rem', lineHeight: 1.8 }}>
-            I'm a software developer based in Accra, Ghana with a passion for building 
-            impactful digital products. From mobile apps that help people be more productive 
-            to web platforms that solve real business problems.
-          </p>
-          <p style={{ color: '#a1a1aa', fontSize: '1.125rem', lineHeight: 1.8 }}>
-            Currently working at M-Kopa while completing my IT diploma at GCTU. 
-            I've built 5+ mobile apps and 2+ production web apps, including OneTap 
-            which serves 50+ active users.
-          </p>
-          <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', marginTop: '1rem' }}>
-            <div>
-              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#22c55e' }}>5+</div>
-              <div style={{ color: '#71717a', fontSize: '0.875rem' }}>Mobile Apps</div>
+      <section id="about">
+        <div className="container">
+          <div className="section-header">
+            <h2>About Me</h2>
+          </div>
+          <div className="about-grid">
+            <div className="about-content">
+              <p>
+                I'm a <strong>software developer</strong> based in Accra, Ghana. 
+                I build apps that solve real problems — from task management tools to sales CRMs.
+              </p>
+              <p>
+                Currently working at <strong style={{ color: 'var(--accent)' }}>M-Kopa</strong> as a Sales Representative 
+                while building apps on the side. Diploma in IT from GCTU (2023-2025).
+              </p>
+              <p>
+                When I'm not coding, I'm improving my skills, researching tech, or building something new.
+                Always learning, always building.
+              </p>
             </div>
-            <div>
-              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#22c55e' }}>2+</div>
-              <div style={{ color: '#71717a', fontSize: '0.875rem' }}>Web Apps</div>
-            </div>
-            <div>
-              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#22c55e' }}>50+</div>
-              <div style={{ color: '#71717a', fontSize: '0.875rem' }}>Active Users</div>
+            <div className="about-card">
+              <h4>Connect</h4>
+              <ul className="contact-list">
+                <li>
+                  <span style={{ color: 'var(--accent)' }}>@</span>
+                  <a href="https://github.com/EasWay" target="_blank" rel="noopener">github.com/EasWay</a>
+                </li>
+                <li>
+                  <span style={{ color: 'var(--accent)' }}>in</span>
+                  <a href="https://linkedin.com/in/resilience-fred" target="_blank" rel="noopener">linkedin.com/in/resilience-fred</a>
+                </li>
+                <li>
+                  <span style={{ color: 'var(--accent)' }}>@</span>
+                  <a href="mailto:fokuogodfred@gmail.com">fokuogodfred@gmail.com</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
       {/* Projects */}
-      <section id="projects" className="section">
-        <h2 style={{ fontSize: '2rem', marginBottom: '3rem' }}>Projects</h2>
-        <div className="projects-grid">
-          {projects.map((project) => (
-            <a
-              key={project.name}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="card-clean"
-              style={{ textDecoration: 'none', display: 'block' }}
-            >
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.75rem', color: '#fafafa' }}>
-                {project.name}
-              </h3>
-              <p style={{ color: '#a1a1aa', fontSize: '0.9rem', marginBottom: '1rem', lineHeight: 1.6 }}>
-                {project.description}
-              </p>
-              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                {project.tech.map((t) => (
-                  <span key={t} style={{ fontSize: '0.75rem', color: '#71717a', background: '#1f1f1f', padding: '0.25rem 0.5rem', borderRadius: '0.25rem' }}>
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </a>
-          ))}
+      <section id="projects" style={{ background: 'var(--bg-secondary)' }}>
+        <div className="container">
+          <div className="section-header">
+            <h2>Projects</h2>
+            <p>Recent work and side projects</p>
+          </div>
+          <div className="projects-grid">
+            {projects.map((project, i) => (
+              <a 
+                key={i} 
+                href={project.link}
+                className="project-card"
+              >
+                <div className="project-header">
+                  <h3>{project.name}</h3>
+                  <span className="project-link">View →</span>
+                </div>
+                <p className="project-desc">{project.desc}</p>
+                <div className="project-tags">
+                  {project.tech.map((t, j) => (
+                    <span key={j} className="tag">{t}</span>
+                  ))}
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Skills */}
-      <section id="skills" className="section">
-        <h2 style={{ fontSize: '2rem', marginBottom: '3rem' }}>Skills</h2>
-        <div className="skills-wrap">
-          {skills.map((skill) => (
-            <span key={skill} className="skill-tag">
-              {skill}
-            </span>
-          ))}
+      <section id="skills">
+        <div className="container">
+          <div className="section-header">
+            <h2>Skills</h2>
+            <p>Technologies and tools I work with</p>
+          </div>
+          <div className="skills-grid">
+            {skills.map((skill, i) => (
+              <span key={i} className="skill-tag">{skill}</span>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Experience */}
-      <section id="experience" className="section">
-        <h2 style={{ fontSize: '2rem', marginBottom: '3rem' }}>Experience</h2>
-        <div className="timeline" style={{ maxWidth: '600px' }}>
-          {experience.map((exp, i) => (
-            <div key={i} className="timeline-item">
-              <p style={{ fontSize: '0.875rem', color: '#22c55e', marginBottom: '0.25rem' }}>
-                {exp.period}
-              </p>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '0.25rem' }}>{exp.role}</h3>
-              <p style={{ color: '#a1a1aa', marginBottom: '0.5rem' }}>{exp.company}</p>
-              <p style={{ color: '#71717a', fontSize: '0.9rem' }}>{exp.description}</p>
-            </div>
-          ))}
+      <section id="experience" style={{ background: 'var(--bg-secondary)' }}>
+        <div className="container">
+          <div className="section-header">
+            <h2>Experience</h2>
+          </div>
+          <div className="timeline">
+            {experience.map((exp, i) => (
+              <div key={i} className="timeline-item">
+                <h3 className="timeline-role">{exp.role}</h3>
+                <p className="timeline-company">
+                  {exp.company} <span>• {exp.period}</span>
+                </p>
+                <p className="timeline-desc">{exp.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Contact */}
-      <section id="contact" className="section">
-        <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Get In Touch</h2>
-        <p style={{ color: '#a1a1aa', fontSize: '1.125rem', marginBottom: '2rem', maxWidth: '500px' }}>
-          I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing.
-        </p>
-        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <a href="https://github.com/EasWay" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
-            GitHub
-          </a>
-          <a href="https://linkedin.com/in/resilience-fred" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
-            LinkedIn
-          </a>
-          <a href="mailto:fokuogodfred@gmail.com" className="btn btn-outline">
-            Email
-          </a>
+      <section id="contact" className="contact-section">
+        <div className="container">
+          <h2>Let's Build Something</h2>
+          <p>Want to work together or have a question? I'd love to hear from you.</p>
+          <div className="contact-links">
+            <a href="https://github.com/EasWay" target="_blank" rel="noopener" className="btn btn-secondary">GitHub</a>
+            <a href="https://linkedin.com/in/resilience-fred" target="_blank" rel="noopener" className="btn btn-secondary">LinkedIn</a>
+            <a href="mailto:fokuogodfred@gmail.com" className="btn btn-primary">Email Me</a>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer style={{ padding: '2rem', textAlign: 'center', color: '#71717a', fontSize: '0.875rem', borderTop: '1px solid #2a2a2a' }}>
-        <p>© {new Date().getFullYear()} Godfred Fokuo. Built with Next.js.</p>
+      <footer>
+        <p>Built with Next.js • Deployed on Vercel</p>
+        <p style={{ marginTop: '0.5rem' }}>© 2026 Godfred Fokuo. All rights reserved.</p>
       </footer>
-    </>
-  );
+    </main>
+  )
 }
